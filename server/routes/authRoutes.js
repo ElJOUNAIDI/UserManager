@@ -74,6 +74,10 @@ router.post('/login', async (req, res) => {
         next();
     });
     }
+
+    router.get('/home', authMiddleware, (req, res) => {
+        res.json({ message: `Bienvenue, utilisateur ${req.user.email}` });
+    });
 export default router;
 
 
